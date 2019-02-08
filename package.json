@@ -1,0 +1,9 @@
+{
+  "name": "stream",
+  "version": "1.0.0",
+  "description": "Reactive tool",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "spirin.vladimir@gmail.com"
+}
