@@ -4,7 +4,7 @@ Reactive streams:
 - same value won't emit
 
 ## Install
-```npm install spirinvladimir/signal```
+```npm install spirinvladimir/stream```
 
 ## API
 * .stream(emitter)
