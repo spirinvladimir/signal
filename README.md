@@ -12,7 +12,7 @@ Reactive streams:
 * .map(next)
 
 ## Example
-```
+```js
 var {stream, combine, map} = require('stream')
 var a = document.getElementById('a')
 var b = document.getElementById('b')
