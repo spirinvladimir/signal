@@ -7,7 +7,7 @@ function immutable (value) {
 }
 
 
-var stream = cb => {
+var signal = cb => {
     var
         listners = [],
         last,
@@ -32,12 +32,12 @@ var stream = cb => {
 }
 
 
-var combine = (streams, cb) =>
-    stream(emit => {
+var combine = (signals, cb) =>
+    signal(emit => {
         var event = [];
         var fire = false;
-        streams.forEach((stream$, i) =>
-            stream$.onValue(value => {
+        signals.forEach((signal$, i) =>
+            signal$.onValue(value => {
                 event[i] = value
                 if (fire) {
                     emit(cb.apply(null, event))
@@ -52,14 +52,14 @@ var combine = (streams, cb) =>
     })
 
 
-var map = (stream$, cb) =>
-    stream(emit =>
-        stream$.onValue(value =>
+var map = (signal$, cb) =>
+    signal(emit =>
+        signal$.onValue(value =>
             cb(value, emit)
         )
     )
 
 
-module.exports.stream = stream
+module.exports.signal = signal
 module.exports.combine = combine
 module.exports.map = map
