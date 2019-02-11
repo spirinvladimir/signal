@@ -1,26 +1,26 @@
-# Stream
-Reactive streams:
+# Signal
+Signal is a reactive stream which:
 - never end
 - same value won't emit
 
 ## Install
-```npm install spirinvladimir/stream```
+```npm install spirinvladimir/signal```
 
 ## API
-* .stream(emitter)
-* .combine([streams], reducer)
+* .signal(emitter)
+* .combine([signals], reducer)
 * .map(next)
 
 ## Example
 ```js
-var {stream, combine, map} = require('stream')
+var {signal, combine, map} = require('signal')
 var a = document.getElementById('a')
 var b = document.getElementById('b')
 
 combine(
     [
-        stream(emit => a.onchange = () => emit(a.value))
-        stream(emit => b.onchange = () => emit(b.value))
+        signal(emit => a.onchange = () => emit(a.value))
+        signal(emit => b.onchange = () => emit(b.value))
     ],
     (a, b) => a + b
 ).onValue(c => document.title = c)
