@@ -15,6 +15,30 @@ var signal = cb => {
     setTimeout(
         () =>
             cb(value => {
+                if (value === undefined) return;//combine requirement
+                last = value;
+                started = true;
+                listners.forEach(listner => listner(immutable(value)))
+            }),
+        0
+    )
+
+    return {
+        onValue: listner => {
+            listners.push(listner)
+            started && listner(last)
+        }
+    }
+}
+
+var signal_changes = cb => {
+    var
+        listners = [],
+        last,
+        started = false;
+    setTimeout(
+        () =>
+            cb(value => {
                 if (value === last) return;//combine requirement
                 last = value;
                 started = true;
@@ -61,5 +85,6 @@ var map = (signal$, cb) =>
 
 
 module.exports.signal = signal
+module.exports.signal_changes = signal_changes
 module.exports.combine = combine
 module.exports.map = map
