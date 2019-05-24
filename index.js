@@ -1,48 +1,16 @@
-function immutable (value) {
-    try {
-        return JSON.parse(JSON.stringify(value))
-    } catch (e) {
-        return value
-    }
-}
-
-
 var signal = cb => {
     var
         listners = [],
-        last,
-        started = false;
+        last = {},
+        started = false
+
     setTimeout(
         () =>
             cb(value => {
-                if (value === undefined) return;//combine requirement
-                last = value;
-                started = true;
-                listners.forEach(listner => listner(immutable(value)))
-            }),
-        0
-    )
-
-    return {
-        onValue: listner => {
-            listners.push(listner)
-            started && listner(last)
-        }
-    }
-}
-
-var signal_changes = cb => {
-    var
-        listners = [],
-        last,
-        started = false;
-    setTimeout(
-        () =>
-            cb(value => {
-                if (value === last) return;//combine requirement
-                last = value;
-                started = true;
-                listners.forEach(listner => listner(immutable(value)))
+                if (value === last) return
+                last = value
+                started = true
+                listners.forEach(listner => listner(value))
             }),
         0
     )
@@ -58,19 +26,12 @@ var signal_changes = cb => {
 
 var combine = (signals, cb) =>
     signal(emit => {
-        var event = [];
-        var fire = false;
+        var event = Array(signals.length)
+        var fire = false
         signals.forEach((signal$, i) =>
             signal$.onValue(value => {
                 event[i] = value
-                if (fire) {
-                    emit(cb.apply(null, event))
-                } else {
-                    fire = event.findIndex(v => typeof v === 'undefined') === -1;
-                    if (fire) {
-                        emit(cb.apply(null, event))
-                    }
-                }
+                emit(cb.apply(null, event))
             })
         )
     })
@@ -85,6 +46,5 @@ var map = (signal$, cb) =>
 
 
 module.exports.signal = signal
-module.exports.signal_changes = signal_changes
 module.exports.combine = combine
 module.exports.map = map
