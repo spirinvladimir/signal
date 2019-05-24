@@ -4,8 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/spirinvladimir/signal/badge.svg?branch=master)](https://coveralls.io/github/spirinvladimir/signal?branch=master)
 
 ## micro reactive framework
-only **3** functions
-    makes you development easy
+only **3** functions makes you development easy
 
 ## Install
 ```npm install spirinvladimir/signal```
