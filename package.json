@@ -3,7 +3,25 @@
   "version": "1.0.0",
   "description": "Reactive tool",
   "scripts": {
-    "start": "node index"
+    "start": "node index",
+    "test": "nyc mocha -b"
   },
-  "author": "spirin.vladimir@gmail.com"
+  "author": "spirin.vladimir@gmail.com",
+  "devDependencies": {
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": false,
+    "statements": 9,
+    "branches": 8,
+    "functions": 8,
+    "lines": 9,
+    "reporter": [
+      "html",
+      "text-summary"
+    ],
+    "all": true
+  }
 }

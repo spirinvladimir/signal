@@ -8,6 +8,7 @@ Signal is a reactive stream which:
 
 ## API
 * .signal(emitter)
+* .signal_changes([signals], reducer)
 * .combine([signals], reducer)
 * .map(next)
 
