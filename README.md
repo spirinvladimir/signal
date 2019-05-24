@@ -11,10 +11,30 @@ only **3** functions makes you development easy
 
 ## API
 ### .signal(emitter)
+```js
+var {signal} = require('signal')
+signal(emit => [1,2,3].forEach(emit)).onValue(console.log)
+//1
+//2
+//3
+```
 ### .combine([signals], reducer)
+```js
+var {signal, combine} = require('signal')
+combine(
+    [
+        signal(emit => [1,2,3].forEach(emit)),
+        signal(emit => [1,2,3].forEach(emit))
+    ],
+    (x, y) => x + y
+).onValue(console.log)
+//2
+//4
+//6
+```
 ### .map(next)
 
-## Example
+## Example UI calculator with operation +
 ```js
 var {signal, combine, map} = require('signal')
 var a = document.getElementById('a')
@@ -30,5 +50,5 @@ map(
         (a, b) => [a, b]
     ),
     ([a, b], emit) => a !== undefined && b !== undefined && emit(a + b)
-).onValue(c => document.title = c)
+).onValue(value => c.value = value)
 ```
