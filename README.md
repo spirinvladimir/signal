@@ -1,4 +1,7 @@
 # Signal
+
+[![Build Status](https://travis-ci.org/spirinvladimir/signal.svg?branch=master)](https://travis-ci.org/spirinvladimir/signal)
+
 Signal is a reactive stream which:
 - never end
 - same value won't emit
