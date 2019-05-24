@@ -3,9 +3,10 @@
 [![Build Status](https://travis-ci.org/spirinvladimir/signal.svg?branch=master)](https://travis-ci.org/spirinvladimir/signal)
 [![Coverage Status](https://coveralls.io/repos/github/spirinvladimir/signal/badge.svg?branch=master)](https://coveralls.io/github/spirinvladimir/signal?branch=master)
 
-Signal is a reactive stream which:
-- never end
-- same value won't emit
+## micro reactive framework:
+with only **4** functions
+
+You do emit - signal produce function callChanges
 
 ## Install
 ```npm install spirinvladimir/signal```
