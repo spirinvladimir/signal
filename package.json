@@ -4,10 +4,13 @@
   "description": "Reactive tool",
   "scripts": {
     "start": "node index",
-    "test": "nyc mocha -b"
+    "coverage": "nyc mocha -b",
+    "report": "nyc report --reporter=text-lcov | coveralls",
+    "test": "npm run coverage && npm run report"
   },
   "author": "spirin.vladimir@gmail.com",
   "devDependencies": {
+    "coveralls": "^3.0.3",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1"
   },
