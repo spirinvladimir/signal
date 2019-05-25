@@ -1,6 +1,6 @@
 var
     assert = require('assert'),
-    {signal} = require('./index')
+    {signal, map} = require('./index')
 
 describe('signal', () => {
     it('should stream from [1, 2, 3] to [1, 2, 3]', () => {
@@ -34,5 +34,15 @@ describe('signal', () => {
                     to.push(value) === from.length && assert.deepEqual(to, from) || done()),
             time_scale * (from[0] + from[1]) / 2
         )
+    })
+    it('map between signals chain', () => {
+        var
+            to = []
+
+        map(
+            signal(emit => [1, 2, 3].forEach(emit)),
+            (value, emit) => emit(value + 1)
+        )
+            .onValue(value => to.push(value) === 3 && assert.deepEqual(to, [2, 3, 4]))
     })
 })
