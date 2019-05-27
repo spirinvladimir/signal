@@ -5,12 +5,11 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## micro reactive framework
-only **3** functions makes you development easy
+- only **3** functions makes you development easy
+- [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
 ## Install
 ```npm install spirinvladimir/signal```
-
-[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
 ## API
 ### .signal(emitter)
