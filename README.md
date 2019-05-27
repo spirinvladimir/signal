@@ -13,26 +13,43 @@ only **3** functions makes you development easy
 ### .signal(emitter)
 ```js
 var {signal} = require('signal')
-signal(emit => [1,2,3].forEach(emit)).onValue(console.log)
-//1
-//2
-//3
+signal(emit => [1 ,2 ,3].forEach(_ => setTimeout(emit, 0, _))).onValue(console.log)
+/*
+1
+2
+3
+*/
 ```
 ### .combine([signals], reducer)
 ```js
 var {signal, combine} = require('signal')
 combine(
     [
-        signal(emit => [1,2,3].forEach(emit)),
-        signal(emit => [1,2,3].forEach(emit))
+        signal(emit => [1, 3].forEach(_ => setTimeout(emit, _ * 10, _))),
+        signal(emit => [2, 4].forEach(_ => setTimeout(emit, _ * 10, _))),
     ],
-    (x, y) => x + y
+    (a, b) => Math.max(a || -Infinity, b || -Infinity)
 ).onValue(console.log)
-//2
-//4
-//6
+/*
+1
+2
+3
+4
+*/
 ```
 ### .map(next)
+```js
+var {signal, map} = require('signal')
+map(
+    signal(emit => [1, 2, 3].forEach(_ => setTimeout(emit, 0, _))),
+    (value, emit) => emit(value + 1)
+).onValue(console.log)
+/*
+2
+3
+4
+/*
+```
 
 ## Example UI calculator with operation +
 ```js

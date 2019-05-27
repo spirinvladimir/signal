@@ -56,7 +56,7 @@ describe('signal', () => {
             to = []
 
         map(
-            signal(emit => [1, 2, 3].forEach(_ => setTimeout(emit, 0, _))),
+            signal(emit => from.forEach(_ => setTimeout(emit, 0, _))),
             (value, emit) => emit(value + 1)
         )
             .onValue(value => {
@@ -87,8 +87,8 @@ describe('signal', () => {
     })
     it('combine', done => {
         var
-            from1 = [1, 3, 5],
-            from2 = [2, 4, 6],
+            from1 = [1, 3],
+            from2 = [2, 4],
             to = [],
             t = 10
 
@@ -102,7 +102,7 @@ describe('signal', () => {
             .onValue(value => {
                 to.push(value)
                 if (to.length === from1.length + from2.length) {
-                    assert.deepEqual(to, [1, 2, 3, 4, 5, 6])
+                    assert.deepEqual(to, [1, 2, 3, 4])
                     done()
                 }
             })
