@@ -10,6 +10,8 @@ only **3** functions makes you development easy
 ## Install
 ```npm install spirinvladimir/signal```
 
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+
 ## API
 ### .signal(emitter)
 ```js
