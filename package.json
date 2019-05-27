@@ -1,7 +1,7 @@
 {
-  "name": "signal",
+  "name": "@spirinvladimir/signal",
   "version": "1.0.0",
-  "description": "Reactive tool",
+  "description": "micro reactive framework",
   "scripts": {
     "start": "node index",
     "cov": "npm run coverage",
@@ -11,17 +11,17 @@
   },
   "author": "spirin.vladimir@gmail.com",
   "devDependencies": {
-    "coveralls": "^3.0.3",
-    "mocha": "^6.1.4",
-    "nyc": "^14.1.1"
+    "coveralls": "3.0.3",
+    "mocha": "6.1.4",
+    "nyc": "14.1.1"
   },
   "nyc": {
     "check-coverage": true,
     "per-file": false,
-    "statements": 9,
-    "branches": 8,
-    "functions": 8,
-    "lines": 9,
+    "statements": 100,
+    "branches": 100,
+    "functions": 100,
+    "lines": 100,
     "reporter": [
       "html",
       "text-summary"
