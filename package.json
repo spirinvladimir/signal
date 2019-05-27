@@ -13,10 +13,11 @@
   "author": "spirin.vladimir@gmail.com",
   "devDependencies": {
     "coveralls": "3.0.3",
+    "eslint": "*",
+    "eslint-scope": "^4.0.3",
     "mocha": "6.1.4",
     "nyc": "14.1.1",
-    "standard": "12.0.1",
-    "eslint": "*"
+    "standard": "12.0.1"
   },
   "nyc": {
     "check-coverage": true,
