@@ -29,5 +29,19 @@
       "text-summary"
     ],
     "all": true
-  }
+  },
+  "main": "index.js",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spirinvladimir/signal.git"
+  },
+  "keywords": [
+    "stream"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spirinvladimir/signal/issues"
+  },
+  "homepage": "https://github.com/spirinvladimir/signal#readme"
 }
