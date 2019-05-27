@@ -15,7 +15,8 @@
     "coveralls": "3.0.3",
     "mocha": "6.1.4",
     "nyc": "14.1.1",
-    "standard": "12.0.1"
+    "standard": "12.0.1",
+    "eslint": "*"
   },
   "nyc": {
     "check-coverage": true,
