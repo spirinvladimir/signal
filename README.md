@@ -2,12 +2,15 @@
 
 [![Build Status](https://travis-ci.org/spirinvladimir/signal.svg?branch=master)](https://travis-ci.org/spirinvladimir/signal)
 [![Coverage Status](https://coveralls.io/repos/github/spirinvladimir/signal/badge.svg?branch=master)](https://coveralls.io/github/spirinvladimir/signal?branch=master)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## micro reactive framework
 only **3** functions makes you development easy
 
 ## Install
 ```npm install spirinvladimir/signal```
+
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
 ## API
 ### .signal(emitter)
