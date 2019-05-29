@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/spirinvladimir/signal.svg?branch=master)](https://travis-ci.org/spirinvladimir/signal)
 [![Coverage Status](https://coveralls.io/repos/github/spirinvladimir/signal/badge.svg?branch=master)](https://coveralls.io/github/spirinvladimir/signal?branch=master)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fspirinvladimir%2Fsignal.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fspirinvladimir%2Fsignal?ref=badge_shield)
 
 ## micro reactive framework
 - only **3** functions makes you development easy
@@ -71,3 +72,7 @@ map(
     ([a, b], emit) => a !== undefined && b !== undefined && emit(a + b)
 ).onValue(value => c.value = value)
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fspirinvladimir%2Fsignal.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fspirinvladimir%2Fsignal?ref=badge_large)
